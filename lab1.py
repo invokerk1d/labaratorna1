@@ -16,27 +16,28 @@ def divide(a, b):
 def power(a, b):
     return a ** b
 
-print("Select operation:")
-print("1. Add (+)")
-print("2. Subtract (-)")
-print("3. Multiply (*)")
-print("4. Divide (/)")
-print("5. Power (^)")
+# Основний запуск калькулятора
+if __name__ == "__main__":
+    print("Select operation:")
+    print("1. Add (+)")
+    print("2. Subtract (-)")
+    print("3. Multiply (*)")
+    print("4. Divide (/)")
+    print("5. Power (^)")
 
-operation = input("Enter operation (+, -, *, /, ^): ")
+    operation = input("Enter operation (+, -, *, /, ^): ")
+    x = float(input("Enter first number: "))
+    y = float(input("Enter second number: "))
 
-x = float(input("Enter first number: "))
-y = float(input("Enter second number: "))
-
-if operation == '+':
-    print("Result:", add(x, y))
-elif operation == '-':
-    print("Result:", subtract(x, y))
-elif operation == '*':
-    print("Result:", multiply(x, y))
-elif operation == '/':
-    print("Result:", divide(x, y))
-elif operation == '^':
-    print("Result:", power(x, y))
-else:
-    print("Invalid operation")
+    if operation == '+':
+        print("Result:", add(x, y))
+    elif operation == '-':
+        print("Result:", subtract(x, y))
+    elif operation == '*':
+        print("Result:", multiply(x, y))
+    elif operation == '/':
+        print("Result:", divide(x, y))
+    elif operation == '^':
+        print("Result:", power(x, y))
+    else:
+        print("Invalid operation")
