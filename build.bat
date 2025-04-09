@@ -1,12 +1,16 @@
 @echo off
-REM Встановлюємо залежності
-C:\Users\psyhok1d\AppData\Local\Microsoft\WindowsApps\pip.exe install -r requirements.txt
+REM Перевірка Python і pip
+python --version || exit /b 1
+pip --version || exit /b 1
 
-REM Запускаємо тести
-C:\Users\psyhok1d\AppData\Local\Microsoft\WindowsApps\python.exe -m unittest test_calculator.py
+REM Встановлення залежностей
+pip install -r requirements.txt || exit /b 1
 
-REM Збираємо .exe
-C:\Users\psyhok1d\AppData\Local\Microsoft\WindowsApps\python.exe -m pyinstaller -F -i "icon.ico" lab1.py
+REM Запуск тестів
+python -m unittest test_calculator.py || exit /b 1
+
+REM Збірка .exe
+pyinstaller -F -i "icon.ico" lab1.py || exit /b 1
 
 echo Build completed!
 pause
